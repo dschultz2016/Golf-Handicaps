@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golf Handicap Tracker</title>
+<style>
+:root {
+  --bg:#f7f7f5; --card:#ffffff; --text:#171717; --muted:#666;
+  --grid:#dedede; --you:#1f5f99; --partner:#8f4a3d; --accent:#1f5f99;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--text)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 50px}
+h1{margin:0 0 5px;font-size:30px}
+.sub{color:var(--muted);margin-bottom:22px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.card{background:var(--card);border:1px solid #e3e3e3;border-radius:12px;padding:16px}
+.card .label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.card .value{font-size:30px;font-weight:700;margin-top:3px}
+.panel{background:var(--card);border:1px solid #e3e3e3;border-radius:12px;padding:18px;margin-bottom:18px}
+.panel h2{margin:0 0 14px;font-size:20px}
+.legend{display:flex;gap:18px;align-items:center;margin:8px 0 12px;color:#444;font-size:14px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.chartbox{width:100%;overflow-x:auto}
+svg{width:100%;min-width:760px;height:380px;display:block}
+.tablewrap{overflow:auto}
+table{border-collapse:collapse;width:100%;min-width:940px;font-size:14px}
+th,td{padding:9px 10px;border-bottom:1px solid #e7e7e7;text-align:right;white-space:nowrap}
+th{position:sticky;top:0;background:#fafafa;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+th:nth-child(1),th:nth-child(2),th:nth-child(3),td:nth-child(1),td:nth-child(2),td:nth-child(3){text-align:left}
+.note{font-size:13px;line-height:1.45;color:var(--muted);margin-top:12px}
+@media(max-width:700px){.cards{grid-template-columns:1fr} h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Golf Handicap Tracker</h1>
+  <div class="sub">Running score and estimated WHS Handicap Index history</div>
+
+  <div class="cards">
+    <div class="card"><div class="label">Your current HI</div><div class="value">27.3</div></div>
+    <div class="card"><div class="label">Partner current HI</div><div class="value">≈23.4</div></div>
+    <div class="card"><div class="label">Current gap</div><div class="value">≈3.9</div></div>
+  </div>
+
+  <div class="panel">
+    <h2>Running Handicap Index</h2>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--you)"></span>You</span>
+      <span><span class="dot" style="background:var(--partner)"></span>Partner</span>
+    </div>
+    <div class="chartbox"><svg id="chart" viewBox="0 0 1100 380" preserveAspectRatio="xMidYMid meet"></svg></div>
+  </div>
+
+  <div class="panel">
+    <h2>Complete Round History</h2>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th><th>Course</th><th>Tee</th>
+            <th>Your Score</th><th>Your Diff.</th><th>Your Running HI</th>
+            <th>Partner Score</th><th>Partner Diff.</th><th>Partner Running HI</th>
+          </tr>
+        </thead>
+        <tbody><tr><td>5/30/26</td><td>Indian Ridge</td><td>Blue</td><td>95</td><td>26.6</td><td></td><td>93</td><td>24.6</td><td></td></tr>
+<tr><td>6/6/26</td><td>River Point</td><td>White/Blue</td><td>125</td><td>47.7</td><td></td><td>112</td><td>36.1</td><td></td></tr>
+<tr><td>6/6/26</td><td>Turkey Creek</td><td>White</td><td>116</td><td>44.7</td><td>24.6</td><td>103</td><td>32.3</td><td>22.6</td></tr>
+<tr><td>6/14/26</td><td>Indian Ridge</td><td>Blue</td><td>101</td><td>32.8</td><td>25.6</td><td>98</td><td>29.7</td><td>23.6</td></tr>
+<tr><td>6/28/26</td><td>Indian Ridge</td><td>Blue</td><td>98</td><td>29.7</td><td>26.6</td><td>97</td><td>28.7</td><td>24.6</td></tr>
+<tr><td>6/30/26</td><td>Turkey Creek</td><td>White</td><td>108</td><td>37.1</td><td>27.2</td><td>—</td><td>—</td><td>24.6</td></tr>
+<tr><td>7/1/26</td><td>Indian Ridge</td><td>Blue</td><td>100</td><td>31.7</td><td>28.2</td><td>49 / 9</td><td>≈28.7</td><td>≈25.7</td></tr>
+<tr><td>7/6/26</td><td>Indian Ridge</td><td>Blue</td><td>98</td><td>29.7</td><td>28.2</td><td>104</td><td>35.9</td><td>≈26.7</td></tr>
+<tr><td>7/11/26</td><td>River Point</td><td>White</td><td>53 / 9</td><td>≈32.8</td><td>≈28.7</td><td>51 / 9</td><td>≈30.2</td><td>≈26.7</td></tr>
+<tr><td>7/18/26</td><td>Duck Creek</td><td>White</td><td>113</td><td>43.0</td><td>28.7</td><td>95</td><td>25.0</td><td>≈26.1</td></tr>
+<tr><td>7/19/26</td><td>Indian Ridge</td><td>Blue</td><td>101</td><td>32.8</td><td>28.7</td><td>96</td><td>27.6</td><td>≈25.7</td></tr>
+<tr><td>7/25/26</td><td>River Point</td><td>White/Blue</td><td>106</td><td>30.7</td><td>29.2</td><td>92</td><td>18.1</td><td>≈22.6</td></tr>
+<tr><td>8/2/26</td><td>Indian Ridge</td><td>Blue</td><td>97</td><td>28.7</td><td>28.7</td><td>47 / 9</td><td>≈25.8</td><td>≈23.4</td></tr>
+<tr><td>9/6/26</td><td>Sandy Pines</td><td>72/132 tees</td><td>100</td><td>24.0</td><td>27.3</td><td>105</td><td>28.3</td><td>≈23.4</td></tr></tbody>
+      </table>
+    </div>
+    <div class="note">
+      9-hole differentials and some older course ratings are estimates based on the assumptions used in the running calculations.
+      Sandy Pines uses the supplied 72.0 course rating / 132 slope.
+    </div>
+  </div>
+</div>
+<script>
+const data = [{"label": "6/6 TC", "you": 24.6, "partner": 22.6}, {"label": "6/14", "you": 25.6, "partner": 23.6}, {"label": "6/28", "you": 26.6, "partner": 24.6}, {"label": "6/30", "you": 27.2, "partner": 24.6}, {"label": "7/1", "you": 28.2, "partner": 25.7}, {"label": "7/6", "you": 28.2, "partner": 26.7}, {"label": "7/11", "you": 28.7, "partner": 26.7}, {"label": "7/18", "you": 28.7, "partner": 26.1}, {"label": "7/19", "you": 28.7, "partner": 25.7}, {"label": "7/25", "you": 29.2, "partner": 22.6}, {"label": "8/2", "you": 28.7, "partner": 23.4}, {"label": "9/6", "you": 27.3, "partner": 23.4}];
+const svg = document.getElementById("chart");
+const NS = "http://www.w3.org/2000/svg";
+const W=1100,H=380,ml=58,mr=24,mt=20,mb=58;
+const ymin=20,ymax=31;
+const x = i => ml + i*(W-ml-mr)/(data.length-1);
+const y = v => mt + (ymax-v)*(H-mt-mb)/(ymax-ymin);
+
+function el(name, attrs={}, text="") {
+  const e=document.createElementNS(NS,name);
+  Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));
+  if(text) e.textContent=text;
+  return e;
+}
+for(let v=20; v<=30; v+=2){
+  const yy=y(v);
+  svg.appendChild(el("line",{x1:ml,y1:yy,x2:W-mr,y2:yy,stroke:"#dedede","stroke-width":"1"}));
+  svg.appendChild(el("text",{x:ml-10,y:yy+4,"text-anchor":"end","font-size":"12",fill:"#666"},String(v)));
+}
+svg.appendChild(el("line",{x1:ml,y1:mt,x2:ml,y2:H-mb,stroke:"#999"}));
+svg.appendChild(el("line",{x1:ml,y1:H-mb,x2:W-mr,y2:H-mb,stroke:"#999"}));
+
+data.forEach((d,i)=>{
+  svg.appendChild(el("text",{x:x(i),y:H-mb+22,"text-anchor":"middle","font-size":"11",fill:"#666"},d.label));
+});
+
+function drawSeries(key,color){
+  const pts=data.map((d,i)=>`${x(i)},${y(d[key])}`).join(" ");
+  svg.appendChild(el("polyline",{points:pts,fill:"none",stroke:color,"stroke-width":"3","stroke-linejoin":"round","stroke-linecap":"round"}));
+  data.forEach((d,i)=>{
+    const c=el("circle",{cx:x(i),cy:y(d[key]),r:"4.5",fill:color});
+    const t=el("title",{},`${d.label} — ${key==="you"?"You":"Partner"}: ${d[key]}`);
+    c.appendChild(t);
+    svg.appendChild(c);
+  });
+}
+drawSeries("you","#1f5f99");
+drawSeries("partner","#8f4a3d");
+
+svg.appendChild(el("text",{x:16,y:(mt+H-mb)/2,"font-size":"12",fill:"#555",transform:`rotate(-90 16 ${(mt+H-mb)/2})`},"Handicap Index"));
+</script>
+</body>
+</html>
