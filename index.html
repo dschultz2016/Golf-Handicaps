@@ -39,16 +39,16 @@ th:nth-child(1),th:nth-child(2),th:nth-child(3),td:nth-child(1),td:nth-child(2),
   <div class="sub">Running score and estimated WHS Handicap Index history</div>
 
   <div class="cards">
-    <div class="card"><div class="label">Your current HI</div><div class="value">27.3</div></div>
-    <div class="card"><div class="label">Partner current HI</div><div class="value">≈23.4</div></div>
-    <div class="card"><div class="label">Current gap</div><div class="value">≈3.9</div></div>
+    <div class="card"><div class="label">Danblob's current handicap</div><div class="value">27.3</div></div>
+    <div class="card"><div class="label">Tuna's current handicap</div><div class="value">≈23.4</div></div>
+    <div class="card"><div class="label">Handicap gap</div><div class="value">≈3.9</div></div>
   </div>
 
   <div class="panel">
     <h2>Running Handicap Index</h2>
     <div class="legend">
-      <span><span class="dot" style="background:var(--you)"></span>You</span>
-      <span><span class="dot" style="background:var(--partner)"></span>Partner</span>
+      <span><span class="dot" style="background:var(--you)"></span>Danblob</span>
+      <span><span class="dot" style="background:var(--partner)"></span>Tuna</span>
     </div>
     <div class="chartbox"><svg id="chart" viewBox="0 0 1100 380" preserveAspectRatio="xMidYMid meet"></svg></div>
   </div>
@@ -60,8 +60,8 @@ th:nth-child(1),th:nth-child(2),th:nth-child(3),td:nth-child(1),td:nth-child(2),
         <thead>
           <tr>
             <th>Date</th><th>Course</th><th>Tee</th>
-            <th>Your Score</th><th>Your Diff.</th><th>Your Running HI</th>
-            <th>Partner Score</th><th>Partner Diff.</th><th>Partner Running HI</th>
+            <th>Danblob Score</th><th>Danblob Diff.</th><th>Danblob Running Handicap</th>
+            <th>Tuna Score</th><th>Tuna Diff.</th><th>Tuna Running Handicap</th>
           </tr>
         </thead>
         <tbody><tr><td>5/30/26</td><td>Indian Ridge</td><td>Blue</td><td>95</td><td>26.6</td><td></td><td>93</td><td>24.6</td><td></td></tr>
@@ -118,7 +118,7 @@ function drawSeries(key,color){
   svg.appendChild(el("polyline",{points:pts,fill:"none",stroke:color,"stroke-width":"3","stroke-linejoin":"round","stroke-linecap":"round"}));
   data.forEach((d,i)=>{
     const c=el("circle",{cx:x(i),cy:y(d[key]),r:"4.5",fill:color});
-    const t=el("title",{},`${d.label} — ${key==="you"?"You":"Partner"}: ${d[key]}`);
+    const t=el("title",{},`${d.label} — ${key==="you"?"Danblob":"Tuna"}: ${d[key]}`);
     c.appendChild(t);
     svg.appendChild(c);
   });
