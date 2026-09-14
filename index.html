@@ -39,9 +39,9 @@ th:nth-child(1),th:nth-child(2),th:nth-child(3),td:nth-child(1),td:nth-child(2),
   <div class="sub">Running score and estimated WHS Handicap Index history</div>
 
   <div class="cards">
-    <div class="card"><div class="label">Danblob's current handicap</div><div class="value">27.7</div></div>
-    <div class="card"><div class="label">Tuna's current handicap</div><div class="value">≈23.4</div></div>
-    <div class="card"><div class="label">Handicap gap</div><div class="value">≈4.3</div></div>
+    <div class="card"><div class="label">Danblob's current handicap</div><div class="value">≈26.6</div></div>
+    <div class="card"><div class="label">Tuna's current handicap</div><div class="value">≈23.5</div></div>
+    <div class="card"><div class="label">Handicap gap</div><div class="value">≈3.1</div></div>
   </div>
 
   <div class="panel">
@@ -78,17 +78,18 @@ th:nth-child(1),th:nth-child(2),th:nth-child(3),td:nth-child(1),td:nth-child(2),
 <tr><td>7/25/26</td><td>River Point</td><td>White/Blue</td><td>106</td><td>30.7</td><td>29.2</td><td>92</td><td>18.1</td><td>≈22.6</td></tr>
 <tr><td>8/2/26</td><td>Indian Ridge</td><td>Blue</td><td>97</td><td>28.7</td><td>28.7</td><td>47 / 9</td><td>≈25.8</td><td>≈23.4</td></tr>
 <tr><td>9/6/26</td><td>Sandy Pines</td><td>72/132 tees</td><td>100</td><td>24.0</td><td>27.3</td><td>105</td><td>28.3</td><td>≈23.4</td></tr>
-<tr><td>9/12/26</td><td>Swan Lake Resort – Black Course</td><td>White (71.5/126)</td><td>111</td><td>35.4</td><td>27.7</td><td>104</td><td>29.1</td><td>≈23.4</td></tr></tbody>
+<tr><td>9/12/26</td><td>Swan Lake Resort – Black Course</td><td>White (71.5/126)</td><td>111</td><td>35.4</td><td>27.7</td><td>104</td><td>29.1</td><td>≈23.4</td></tr>
+<tr><td>9/13/26</td><td>Indian Ridge</td><td>Blue – 13 holes</td><td>66 / 13</td><td>≈24.2</td><td>≈26.6</td><td>67 / 13</td><td>≈24.1</td><td>≈23.5</td></tr></tbody>
       </table>
     </div>
     <div class="note">
       9-hole differentials and some older course ratings are estimates based on the assumptions used in the running calculations.
-      Sandy Pines uses the supplied 72.0 course rating / 132 slope. Swan Lake Resort Black Course white tees use 71.5 / 126.
+      Sandy Pines uses the supplied 72.0 course rating / 132 slope. Swan Lake Resort Black Course white tees use 71.5 / 126. The 9/13 Indian Ridge round ended after 13 holes because of darkness; its differentials and running handicaps are estimated using the WHS expected-score treatment for unplayed holes.
     </div>
   </div>
 </div>
 <script>
-const data = [{"label": "6/6 TC", "you": 24.6, "partner": 22.6}, {"label": "6/14", "you": 25.6, "partner": 23.6}, {"label": "6/28", "you": 26.6, "partner": 24.6}, {"label": "6/30", "you": 27.2, "partner": 24.6}, {"label": "7/1", "you": 28.2, "partner": 25.7}, {"label": "7/6", "you": 28.2, "partner": 26.7}, {"label": "7/11", "you": 28.7, "partner": 26.7}, {"label": "7/18", "you": 28.7, "partner": 26.1}, {"label": "7/19", "you": 28.7, "partner": 25.7}, {"label": "7/25", "you": 29.2, "partner": 22.6}, {"label": "8/2", "you": 28.7, "partner": 23.4}, {"label": "9/6", "you": 27.3, "partner": 23.4}, {"label": "9/12", "you": 27.7, "partner": 23.4}];
+const data = [{"label": "6/6 TC", "you": 24.6, "partner": 22.6}, {"label": "6/14", "you": 25.6, "partner": 23.6}, {"label": "6/28", "you": 26.6, "partner": 24.6}, {"label": "6/30", "you": 27.2, "partner": 24.6}, {"label": "7/1", "you": 28.2, "partner": 25.7}, {"label": "7/6", "you": 28.2, "partner": 26.7}, {"label": "7/11", "you": 28.7, "partner": 26.7}, {"label": "7/18", "you": 28.7, "partner": 26.1}, {"label": "7/19", "you": 28.7, "partner": 25.7}, {"label": "7/25", "you": 29.2, "partner": 22.6}, {"label": "8/2", "you": 28.7, "partner": 23.4}, {"label": "9/6", "you": 27.3, "partner": 23.4}, {"label": "9/12", "you": 27.7, "partner": 23.4}, {"label": "9/13", "you": 26.6, "partner": 23.5}];
 const svg = document.getElementById("chart");
 const NS = "http://www.w3.org/2000/svg";
 const W=1100,H=380,ml=58,mr=24,mt=20,mb=58;
