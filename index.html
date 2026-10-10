@@ -8,7 +8,7 @@
 :root{--bg:#f6f7f5;--card:#fff;--text:#171717;--muted:#686868;--border:#e1e4df;--dan:#2563a6;--tuna:#a35445}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-.wrap{max-width:1180px;margin:auto;padding:24px 16px 48px}
+.wrap{max-width:1240px;margin:auto;padding:24px 16px 48px}
 h1{font-size:30px;margin:0 0 5px} .sub{color:var(--muted);margin-bottom:20px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
 .card,.panel{background:var(--card);border:1px solid var(--border);border-radius:14px}
@@ -16,12 +16,12 @@ h1{font-size:30px;margin:0 0 5px} .sub{color:var(--muted);margin-bottom:20px}
 .panel{padding:16px;margin-bottom:16px} h2{font-size:20px;margin:0 0 12px}
 .legend{display:flex;gap:18px;margin-bottom:8px;font-size:14px;color:#444}
 .key{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
-.chart-scroll{overflow-x:auto} svg{width:100%;min-width:850px;height:auto;display:block}
-.table-scroll{overflow-x:auto} table{border-collapse:collapse;width:100%;min-width:1000px;font-size:14px}
-th,td{padding:9px 10px;border-bottom:1px solid #e8e8e8;white-space:nowrap;text-align:right}
-th{font-size:11px;text-transform:uppercase;letter-spacing:.045em;background:#fafafa;position:sticky;top:0}
+.chart-scroll{overflow-x:auto} svg{width:100%;min-width:940px;height:auto;display:block}
+.table-scroll{overflow-x:auto} table{border-collapse:collapse;width:100%;min-width:1250px;font-size:13px}
+th,td{padding:9px 9px;border-bottom:1px solid #e8e8e8;white-space:nowrap;text-align:right}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;background:#fafafa;position:sticky;top:0}
 th:nth-child(-n+3),td:nth-child(-n+3){text-align:left}
-.note{font-size:13px;line-height:1.45;color:var(--muted);margin-top:12px}
+.note{font-size:13px;line-height:1.5;color:var(--muted);margin-top:12px}
 @media(max-width:680px){.cards{grid-template-columns:1fr}h1{font-size:24px}}
 </style>
 </head>
@@ -29,122 +29,135 @@ th:nth-child(-n+3),td:nth-child(-n+3){text-align:left}
 <div class="wrap">
 <h1>Golf Handicap Tracker</h1>
 <div class="sub">Danblob & Tuna · estimated WHS running history</div>
+
 <div class="cards">
-  <div class="card"><div class="label">Danblob's current handicap</div><div class="value">27.1</div></div>
-  <div class="card"><div class="label">Tuna's current handicap</div><div class="value">24.0</div></div>
-  <div class="card"><div class="label">Handicap gap</div><div class="value">3.1</div></div>
+  <div class="card"><div class="label">Danblob's current handicap</div><div class="value">27.8</div></div>
+  <div class="card"><div class="label">Tuna's current handicap</div><div class="value">25.0</div></div>
+  <div class="card"><div class="label">Handicap gap</div><div class="value">2.8</div></div>
 </div>
+
 <div class="panel">
 <h2>Running Handicap Index</h2>
 <div class="legend">
  <span><span class="key" style="background:var(--dan)"></span>Danblob</span>
  <span><span class="key" style="background:var(--tuna)"></span>Tuna</span>
 </div>
-<div class="chart-scroll">
-<svg viewBox="0 0 1120 390" role="img" aria-label="Running handicap index chart" xmlns="http://www.w3.org/2000/svg">
-<line x1="58" y1="328.0" x2="1096" y2="328.0" stroke="#dedede" stroke-width="1"/>
-<text x="48" y="332.0" text-anchor="end" font-size="12" fill="#666">20</text>
-<line x1="58" y1="272.7" x2="1096" y2="272.7" stroke="#dedede" stroke-width="1"/>
-<text x="48" y="276.7" text-anchor="end" font-size="12" fill="#666">22</text>
-<line x1="58" y1="217.5" x2="1096" y2="217.5" stroke="#dedede" stroke-width="1"/>
-<text x="48" y="221.5" text-anchor="end" font-size="12" fill="#666">24</text>
-<line x1="58" y1="162.2" x2="1096" y2="162.2" stroke="#dedede" stroke-width="1"/>
-<text x="48" y="166.2" text-anchor="end" font-size="12" fill="#666">26</text>
-<line x1="58" y1="106.9" x2="1096" y2="106.9" stroke="#dedede" stroke-width="1"/>
-<text x="48" y="110.9" text-anchor="end" font-size="12" fill="#666">28</text>
-<line x1="58" y1="51.6" x2="1096" y2="51.6" stroke="#dedede" stroke-width="1"/>
-<text x="48" y="55.6" text-anchor="end" font-size="12" fill="#666">30</text>
-<line x1="58" y1="24" x2="58" y2="328" stroke="#999"/>
-<line x1="58" y1="328" x2="1096" y2="328" stroke="#999"/>
-<text x="58.0" y="352" text-anchor="middle" font-size="11" fill="#666">6/6 TC</text>
-<text x="122.9" y="352" text-anchor="middle" font-size="11" fill="#666">6/14</text>
-<text x="187.8" y="352" text-anchor="middle" font-size="11" fill="#666">6/28</text>
-<text x="252.6" y="352" text-anchor="middle" font-size="11" fill="#666">6/30</text>
-<text x="317.5" y="352" text-anchor="middle" font-size="11" fill="#666">7/1</text>
-<text x="382.4" y="352" text-anchor="middle" font-size="11" fill="#666">7/6</text>
-<text x="447.2" y="352" text-anchor="middle" font-size="11" fill="#666">7/11</text>
-<text x="512.1" y="352" text-anchor="middle" font-size="11" fill="#666">7/18</text>
-<text x="577.0" y="352" text-anchor="middle" font-size="11" fill="#666">7/19</text>
-<text x="641.9" y="352" text-anchor="middle" font-size="11" fill="#666">7/25</text>
-<text x="706.8" y="352" text-anchor="middle" font-size="11" fill="#666">8/2</text>
-<text x="771.6" y="352" text-anchor="middle" font-size="11" fill="#666">9/6</text>
-<text x="836.5" y="352" text-anchor="middle" font-size="11" fill="#666">9/12</text>
-<text x="901.4" y="352" text-anchor="middle" font-size="11" fill="#666">9/13</text>
-<text x="966.2" y="352" text-anchor="middle" font-size="11" fill="#666">9/14</text>
-<text x="1031.1" y="352" text-anchor="middle" font-size="11" fill="#666">9/26</text>
-<text x="1096.0" y="352" text-anchor="middle" font-size="11" fill="#666">9/27</text>
-<polyline points="58.0,200.9 122.9,173.2 187.8,145.6 252.6,129.0 317.5,101.4 382.4,101.4 447.2,87.6 512.1,87.6 577.0,87.6 641.9,73.7 706.8,87.6 771.6,126.3 836.5,115.2 901.4,145.6 966.2,129.0 1031.1,129.0 1096.0,131.8" fill="none" stroke="#2563a6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-<polyline points="58.0,256.1 122.9,228.5 187.8,200.9 252.6,200.9 317.5,170.5 382.4,142.8 447.2,142.8 512.1,159.4 577.0,170.5 641.9,256.1 706.8,234.0 771.6,234.0 836.5,234.0 901.4,231.3 966.2,231.3 1031.1,211.9 1096.0,217.5" fill="none" stroke="#a35445" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-<circle cx="58.0" cy="200.9" r="4.5" fill="#2563a6"><title>6/6 TC — Danblob: 24.6</title></circle>
-<circle cx="58.0" cy="256.1" r="4.5" fill="#a35445"><title>6/6 TC — Tuna: 22.6</title></circle>
-<circle cx="122.9" cy="173.2" r="4.5" fill="#2563a6"><title>6/14 — Danblob: 25.6</title></circle>
-<circle cx="122.9" cy="228.5" r="4.5" fill="#a35445"><title>6/14 — Tuna: 23.6</title></circle>
-<circle cx="187.8" cy="145.6" r="4.5" fill="#2563a6"><title>6/28 — Danblob: 26.6</title></circle>
-<circle cx="187.8" cy="200.9" r="4.5" fill="#a35445"><title>6/28 — Tuna: 24.6</title></circle>
-<circle cx="252.6" cy="129.0" r="4.5" fill="#2563a6"><title>6/30 — Danblob: 27.2</title></circle>
-<circle cx="252.6" cy="200.9" r="4.5" fill="#a35445"><title>6/30 — Tuna: 24.6</title></circle>
-<circle cx="317.5" cy="101.4" r="4.5" fill="#2563a6"><title>7/1 — Danblob: 28.2</title></circle>
-<circle cx="317.5" cy="170.5" r="4.5" fill="#a35445"><title>7/1 — Tuna: 25.7</title></circle>
-<circle cx="382.4" cy="101.4" r="4.5" fill="#2563a6"><title>7/6 — Danblob: 28.2</title></circle>
-<circle cx="382.4" cy="142.8" r="4.5" fill="#a35445"><title>7/6 — Tuna: 26.7</title></circle>
-<circle cx="447.2" cy="87.6" r="4.5" fill="#2563a6"><title>7/11 — Danblob: 28.7</title></circle>
-<circle cx="447.2" cy="142.8" r="4.5" fill="#a35445"><title>7/11 — Tuna: 26.7</title></circle>
-<circle cx="512.1" cy="87.6" r="4.5" fill="#2563a6"><title>7/18 — Danblob: 28.7</title></circle>
-<circle cx="512.1" cy="159.4" r="4.5" fill="#a35445"><title>7/18 — Tuna: 26.1</title></circle>
-<circle cx="577.0" cy="87.6" r="4.5" fill="#2563a6"><title>7/19 — Danblob: 28.7</title></circle>
-<circle cx="577.0" cy="170.5" r="4.5" fill="#a35445"><title>7/19 — Tuna: 25.7</title></circle>
-<circle cx="641.9" cy="73.7" r="4.5" fill="#2563a6"><title>7/25 — Danblob: 29.2</title></circle>
-<circle cx="641.9" cy="256.1" r="4.5" fill="#a35445"><title>7/25 — Tuna: 22.6</title></circle>
-<circle cx="706.8" cy="87.6" r="4.5" fill="#2563a6"><title>8/2 — Danblob: 28.7</title></circle>
-<circle cx="706.8" cy="234.0" r="4.5" fill="#a35445"><title>8/2 — Tuna: 23.4</title></circle>
-<circle cx="771.6" cy="126.3" r="4.5" fill="#2563a6"><title>9/6 — Danblob: 27.3</title></circle>
-<circle cx="771.6" cy="234.0" r="4.5" fill="#a35445"><title>9/6 — Tuna: 23.4</title></circle>
-<circle cx="836.5" cy="115.2" r="4.5" fill="#2563a6"><title>9/12 — Danblob: 27.7</title></circle>
-<circle cx="836.5" cy="234.0" r="4.5" fill="#a35445"><title>9/12 — Tuna: 23.4</title></circle>
-<circle cx="901.4" cy="145.6" r="4.5" fill="#2563a6"><title>9/13 — Danblob: 26.6</title></circle>
-<circle cx="901.4" cy="231.3" r="4.5" fill="#a35445"><title>9/13 — Tuna: 23.5</title></circle>
-<circle cx="966.2" cy="129.0" r="4.5" fill="#2563a6"><title>9/14 — Danblob: 27.2</title></circle>
-<circle cx="966.2" cy="231.3" r="4.5" fill="#a35445"><title>9/14 — Tuna: 23.5</title></circle>
-<circle cx="1031.1" cy="129.0" r="4.5" fill="#2563a6"><title>9/26 — Danblob: 27.2</title></circle>
-<circle cx="1031.1" cy="211.9" r="4.5" fill="#a35445"><title>9/26 — Tuna: 24.2</title></circle>
-<circle cx="1096.0" cy="131.8" r="4.5" fill="#2563a6"><title>9/27 — Danblob: 27.1</title></circle>
-<circle cx="1096.0" cy="217.5" r="4.5" fill="#a35445"><title>9/27 — Tuna: 24.0</title></circle>
-<text x="17" y="190" font-size="12" fill="#555" transform="rotate(-90 17 190)">Handicap Index</text>
-</svg>
+<div class="chart-scroll"><svg viewBox="0 0 1180 410" role="img" aria-label="Running handicap index chart" xmlns="http://www.w3.org/2000/svg">
+<line x1="58" y1="342.0" x2="1156" y2="342.0" stroke="#dedede" stroke-width="1"/>
+<text x="48" y="346.0" text-anchor="end" font-size="12" fill="#666">20</text>
+<line x1="58" y1="284.2" x2="1156" y2="284.2" stroke="#dedede" stroke-width="1"/>
+<text x="48" y="288.2" text-anchor="end" font-size="12" fill="#666">22</text>
+<line x1="58" y1="226.4" x2="1156" y2="226.4" stroke="#dedede" stroke-width="1"/>
+<text x="48" y="230.4" text-anchor="end" font-size="12" fill="#666">24</text>
+<line x1="58" y1="168.5" x2="1156" y2="168.5" stroke="#dedede" stroke-width="1"/>
+<text x="48" y="172.5" text-anchor="end" font-size="12" fill="#666">26</text>
+<line x1="58" y1="110.7" x2="1156" y2="110.7" stroke="#dedede" stroke-width="1"/>
+<text x="48" y="114.7" text-anchor="end" font-size="12" fill="#666">28</text>
+<line x1="58" y1="52.9" x2="1156" y2="52.9" stroke="#dedede" stroke-width="1"/>
+<text x="48" y="56.9" text-anchor="end" font-size="12" fill="#666">30</text>
+<line x1="58" y1="24" x2="58" y2="342" stroke="#999"/>
+<line x1="58" y1="342" x2="1156" y2="342" stroke="#999"/>
+<text x="58.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">6/6 TC</text>
+<text x="119.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">6/14</text>
+<text x="180.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">6/28</text>
+<text x="241.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">6/30</text>
+<text x="302.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">7/1</text>
+<text x="363.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">7/6</text>
+<text x="424.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">7/11</text>
+<text x="485.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">7/18</text>
+<text x="546.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">7/19</text>
+<text x="607.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">7/25</text>
+<text x="668.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">8/2</text>
+<text x="729.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">9/6</text>
+<text x="790.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">9/12</text>
+<text x="851.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">9/13</text>
+<text x="912.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">9/14</text>
+<text x="973.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">9/26</text>
+<text x="1034.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">9/27</text>
+<text x="1095.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">10/3</text>
+<text x="1156.0" y="366" text-anchor="middle" font-size="10.5" fill="#666">10/10</text>
+<polyline points="58.0,209.0 119.0,180.1 180.0,151.2 241.0,133.9 302.0,104.9 363.0,104.9 424.0,90.5 485.0,90.5 546.0,90.5 607.0,76.0 668.0,90.5 729.0,131.0 790.0,119.4 851.0,151.2 912.0,133.9 973.0,133.9 1034.0,136.7 1095.0,131.0 1156.0,116.5" fill="none" stroke="#2563a6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="58.0,266.8 119.0,237.9 180.0,209.0 241.0,209.0 302.0,177.2 363.0,148.3 424.0,148.3 485.0,165.7 546.0,177.2 607.0,266.8 668.0,243.7 729.0,243.7 790.0,243.7 851.0,240.8 912.0,240.8 973.0,220.6 1034.0,226.4 1095.0,211.9 1156.0,197.5" fill="none" stroke="#a35445" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="58.0" cy="209.0" r="4.3" fill="#2563a6"><title>6/6 TC — Danblob: 24.6</title></circle>
+<circle cx="58.0" cy="266.8" r="4.3" fill="#a35445"><title>6/6 TC — Tuna: 22.6</title></circle>
+<circle cx="119.0" cy="180.1" r="4.3" fill="#2563a6"><title>6/14 — Danblob: 25.6</title></circle>
+<circle cx="119.0" cy="237.9" r="4.3" fill="#a35445"><title>6/14 — Tuna: 23.6</title></circle>
+<circle cx="180.0" cy="151.2" r="4.3" fill="#2563a6"><title>6/28 — Danblob: 26.6</title></circle>
+<circle cx="180.0" cy="209.0" r="4.3" fill="#a35445"><title>6/28 — Tuna: 24.6</title></circle>
+<circle cx="241.0" cy="133.9" r="4.3" fill="#2563a6"><title>6/30 — Danblob: 27.2</title></circle>
+<circle cx="241.0" cy="209.0" r="4.3" fill="#a35445"><title>6/30 — Tuna: 24.6</title></circle>
+<circle cx="302.0" cy="104.9" r="4.3" fill="#2563a6"><title>7/1 — Danblob: 28.2</title></circle>
+<circle cx="302.0" cy="177.2" r="4.3" fill="#a35445"><title>7/1 — Tuna: 25.7</title></circle>
+<circle cx="363.0" cy="104.9" r="4.3" fill="#2563a6"><title>7/6 — Danblob: 28.2</title></circle>
+<circle cx="363.0" cy="148.3" r="4.3" fill="#a35445"><title>7/6 — Tuna: 26.7</title></circle>
+<circle cx="424.0" cy="90.5" r="4.3" fill="#2563a6"><title>7/11 — Danblob: 28.7</title></circle>
+<circle cx="424.0" cy="148.3" r="4.3" fill="#a35445"><title>7/11 — Tuna: 26.7</title></circle>
+<circle cx="485.0" cy="90.5" r="4.3" fill="#2563a6"><title>7/18 — Danblob: 28.7</title></circle>
+<circle cx="485.0" cy="165.7" r="4.3" fill="#a35445"><title>7/18 — Tuna: 26.1</title></circle>
+<circle cx="546.0" cy="90.5" r="4.3" fill="#2563a6"><title>7/19 — Danblob: 28.7</title></circle>
+<circle cx="546.0" cy="177.2" r="4.3" fill="#a35445"><title>7/19 — Tuna: 25.7</title></circle>
+<circle cx="607.0" cy="76.0" r="4.3" fill="#2563a6"><title>7/25 — Danblob: 29.2</title></circle>
+<circle cx="607.0" cy="266.8" r="4.3" fill="#a35445"><title>7/25 — Tuna: 22.6</title></circle>
+<circle cx="668.0" cy="90.5" r="4.3" fill="#2563a6"><title>8/2 — Danblob: 28.7</title></circle>
+<circle cx="668.0" cy="243.7" r="4.3" fill="#a35445"><title>8/2 — Tuna: 23.4</title></circle>
+<circle cx="729.0" cy="131.0" r="4.3" fill="#2563a6"><title>9/6 — Danblob: 27.3</title></circle>
+<circle cx="729.0" cy="243.7" r="4.3" fill="#a35445"><title>9/6 — Tuna: 23.4</title></circle>
+<circle cx="790.0" cy="119.4" r="4.3" fill="#2563a6"><title>9/12 — Danblob: 27.7</title></circle>
+<circle cx="790.0" cy="243.7" r="4.3" fill="#a35445"><title>9/12 — Tuna: 23.4</title></circle>
+<circle cx="851.0" cy="151.2" r="4.3" fill="#2563a6"><title>9/13 — Danblob: 26.6</title></circle>
+<circle cx="851.0" cy="240.8" r="4.3" fill="#a35445"><title>9/13 — Tuna: 23.5</title></circle>
+<circle cx="912.0" cy="133.9" r="4.3" fill="#2563a6"><title>9/14 — Danblob: 27.2</title></circle>
+<circle cx="912.0" cy="240.8" r="4.3" fill="#a35445"><title>9/14 — Tuna: 23.5</title></circle>
+<circle cx="973.0" cy="133.9" r="4.3" fill="#2563a6"><title>9/26 — Danblob: 27.2</title></circle>
+<circle cx="973.0" cy="220.6" r="4.3" fill="#a35445"><title>9/26 — Tuna: 24.2</title></circle>
+<circle cx="1034.0" cy="136.7" r="4.3" fill="#2563a6"><title>9/27 — Danblob: 27.1</title></circle>
+<circle cx="1034.0" cy="226.4" r="4.3" fill="#a35445"><title>9/27 — Tuna: 24.0</title></circle>
+<circle cx="1095.0" cy="131.0" r="4.3" fill="#2563a6"><title>10/3 — Danblob: 27.3</title></circle>
+<circle cx="1095.0" cy="211.9" r="4.3" fill="#a35445"><title>10/3 — Tuna: 24.5</title></circle>
+<circle cx="1156.0" cy="116.5" r="4.3" fill="#2563a6"><title>10/10 — Danblob: 27.8</title></circle>
+<circle cx="1156.0" cy="197.5" r="4.3" fill="#a35445"><title>10/10 — Tuna: 25.0</title></circle>
+<text x="17" y="200" font-size="12" fill="#555" transform="rotate(-90 17 200)">Handicap Index</text>
+</svg></div>
 </div>
-</div>
+
 <div class="panel">
 <h2>Complete Round History</h2>
 <div class="table-scroll">
 <table>
 <thead><tr>
 <th>Date</th><th>Course</th><th>Tee</th>
-<th>Danblob Score</th><th>Danblob Diff.</th><th>Danblob Running Handicap</th>
-<th>Tuna Score</th><th>Tuna Diff.</th><th>Tuna Running Handicap</th>
+<th>Dan Score</th><th>Dan Diff.</th><th>Dan HI</th><th>Dan Putts</th><th>Dan Fairways</th>
+<th>Tuna Score</th><th>Tuna Diff.</th><th>Tuna HI</th><th>Tuna Putts</th><th>Tuna Fairways</th>
 </tr></thead>
-<tbody><tr><td>5/30/26</td><td>Indian Ridge</td><td>Blue</td><td>95</td><td>26.6</td><td>—</td><td>93</td><td>24.6</td><td>—</td></tr>
-<tr><td>6/6/26</td><td>River Point</td><td>White/Blue</td><td>125</td><td>47.7</td><td>—</td><td>112</td><td>36.1</td><td>—</td></tr>
-<tr><td>6/6/26</td><td>Turkey Creek</td><td>White</td><td>116</td><td>44.7</td><td>24.6</td><td>103</td><td>32.3</td><td>22.6</td></tr>
-<tr><td>6/14/26</td><td>Indian Ridge</td><td>Blue</td><td>101</td><td>32.8</td><td>25.6</td><td>98</td><td>29.7</td><td>23.6</td></tr>
-<tr><td>6/28/26</td><td>Indian Ridge</td><td>Blue</td><td>98</td><td>29.7</td><td>26.6</td><td>97</td><td>28.7</td><td>24.6</td></tr>
-<tr><td>6/30/26</td><td>Turkey Creek</td><td>White</td><td>108</td><td>37.1</td><td>27.2</td><td>—</td><td>—</td><td>24.6</td></tr>
-<tr><td>7/1/26</td><td>Indian Ridge</td><td>Blue</td><td>100</td><td>31.7</td><td>28.2</td><td>49 / 9</td><td>≈28.7</td><td>≈25.7</td></tr>
-<tr><td>7/6/26</td><td>Indian Ridge</td><td>Blue</td><td>98</td><td>29.7</td><td>28.2</td><td>104</td><td>35.9</td><td>≈26.7</td></tr>
-<tr><td>7/11/26</td><td>River Point</td><td>White</td><td>53 / 9</td><td>≈32.8</td><td>≈28.7</td><td>51 / 9</td><td>≈30.2</td><td>≈26.7</td></tr>
-<tr><td>7/18/26</td><td>Duck Creek</td><td>White</td><td>113</td><td>43.0</td><td>28.7</td><td>95</td><td>25.0</td><td>≈26.1</td></tr>
-<tr><td>7/19/26</td><td>Indian Ridge</td><td>Blue</td><td>101</td><td>32.8</td><td>28.7</td><td>96</td><td>27.6</td><td>≈25.7</td></tr>
-<tr><td>7/25/26</td><td>River Point</td><td>White/Blue</td><td>106</td><td>30.7</td><td>29.2</td><td>92</td><td>18.1</td><td>≈22.6</td></tr>
-<tr><td>8/2/26</td><td>Indian Ridge</td><td>Blue</td><td>97</td><td>28.7</td><td>28.7</td><td>47 / 9</td><td>≈25.8</td><td>≈23.4</td></tr>
-<tr><td>9/6/26</td><td>Sandy Pines</td><td>72.0 / 132 tees</td><td>100</td><td>24.0</td><td>27.3</td><td>105</td><td>28.3</td><td>≈23.4</td></tr>
-<tr><td>9/12/26</td><td>Swan Lake Resort – Black</td><td>White 71.5 / 126</td><td>111</td><td>35.4</td><td>27.7</td><td>104</td><td>29.1</td><td>≈23.4</td></tr>
-<tr><td>9/13/26</td><td>Indian Ridge</td><td>Blue – 13 holes</td><td>66 / 13</td><td>≈24.2</td><td>≈26.6</td><td>67 / 13</td><td>≈24.1</td><td>≈23.5</td></tr>
-<tr><td>9/14/26</td><td>Indian Ridge</td><td>Blue – partial</td><td>64 / 11</td><td>≈33.0</td><td>≈27.2</td><td>61 / 10</td><td>≈33.0</td><td>≈23.5</td></tr>
-<tr><td>9/26/26</td><td>Indian Ridge</td><td>Blue</td><td>99</td><td>30.7</td><td>27.2</td><td>101</td><td>32.8</td><td>24.2</td></tr>
-<tr><td>9/27/26</td><td>Indian Ridge</td><td>Blue</td><td>95</td><td>26.6</td><td>27.1</td><td>95</td><td>26.6</td><td>24.0</td></tr></tbody>
+<tbody><tr><td>5/30/26</td><td>Indian Ridge</td><td>Blue</td><td>95</td><td>26.6</td><td>—</td><td>—</td><td>—</td><td>93</td><td>24.6</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>6/6/26</td><td>River Point</td><td>White/Blue</td><td>125</td><td>47.7</td><td>—</td><td>—</td><td>—</td><td>112</td><td>36.1</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>6/6/26</td><td>Turkey Creek</td><td>White</td><td>116</td><td>44.7</td><td>24.6</td><td>—</td><td>—</td><td>103</td><td>32.3</td><td>22.6</td><td>—</td><td>—</td></tr>
+<tr><td>6/14/26</td><td>Indian Ridge</td><td>Blue</td><td>101</td><td>32.8</td><td>25.6</td><td>—</td><td>—</td><td>98</td><td>29.7</td><td>23.6</td><td>—</td><td>—</td></tr>
+<tr><td>6/28/26</td><td>Indian Ridge</td><td>Blue</td><td>98</td><td>29.7</td><td>26.6</td><td>—</td><td>—</td><td>97</td><td>28.7</td><td>24.6</td><td>—</td><td>—</td></tr>
+<tr><td>6/30/26</td><td>Turkey Creek</td><td>White</td><td>108</td><td>37.1</td><td>27.2</td><td>—</td><td>—</td><td>—</td><td>—</td><td>24.6</td><td>—</td><td>—</td></tr>
+<tr><td>7/1/26</td><td>Indian Ridge</td><td>Blue</td><td>100</td><td>31.7</td><td>28.2</td><td>—</td><td>—</td><td>49 / 9</td><td>≈28.7</td><td>≈25.7</td><td>—</td><td>—</td></tr>
+<tr><td>7/6/26</td><td>Indian Ridge</td><td>Blue</td><td>98</td><td>29.7</td><td>28.2</td><td>—</td><td>—</td><td>104</td><td>35.9</td><td>≈26.7</td><td>—</td><td>—</td></tr>
+<tr><td>7/11/26</td><td>River Point</td><td>White</td><td>53 / 9</td><td>≈32.8</td><td>≈28.7</td><td>—</td><td>—</td><td>51 / 9</td><td>≈30.2</td><td>≈26.7</td><td>—</td><td>—</td></tr>
+<tr><td>7/18/26</td><td>Duck Creek</td><td>White</td><td>113</td><td>43.0</td><td>28.7</td><td>—</td><td>—</td><td>95</td><td>25.0</td><td>≈26.1</td><td>—</td><td>—</td></tr>
+<tr><td>7/19/26</td><td>Indian Ridge</td><td>Blue</td><td>101</td><td>32.8</td><td>28.7</td><td>—</td><td>—</td><td>96</td><td>27.6</td><td>≈25.7</td><td>—</td><td>—</td></tr>
+<tr><td>7/25/26</td><td>River Point</td><td>White/Blue</td><td>106</td><td>30.7</td><td>29.2</td><td>—</td><td>—</td><td>92</td><td>18.1</td><td>≈22.6</td><td>—</td><td>—</td></tr>
+<tr><td>8/2/26</td><td>Indian Ridge</td><td>Blue</td><td>97</td><td>28.7</td><td>28.7</td><td>—</td><td>—</td><td>47 / 9</td><td>≈25.8</td><td>≈23.4</td><td>—</td><td>—</td></tr>
+<tr><td>9/6/26</td><td>Sandy Pines</td><td>72.0 / 132 tees</td><td>100</td><td>24.0</td><td>27.3</td><td>—</td><td>—</td><td>105</td><td>28.3</td><td>≈23.4</td><td>—</td><td>—</td></tr>
+<tr><td>9/12/26</td><td>Swan Lake Resort – Black</td><td>White 71.5 / 126</td><td>111</td><td>35.4</td><td>27.7</td><td>—</td><td>—</td><td>104</td><td>29.1</td><td>≈23.4</td><td>—</td><td>—</td></tr>
+<tr><td>9/13/26</td><td>Indian Ridge</td><td>Blue – 13 holes</td><td>66 / 13</td><td>≈24.2</td><td>≈26.6</td><td>—</td><td>—</td><td>67 / 13</td><td>≈24.1</td><td>≈23.5</td><td>—</td><td>—</td></tr>
+<tr><td>9/14/26</td><td>Indian Ridge</td><td>Blue – partial</td><td>64 / 11</td><td>≈33.0</td><td>≈27.2</td><td>—</td><td>—</td><td>61 / 10</td><td>≈33.0</td><td>≈23.5</td><td>—</td><td>—</td></tr>
+<tr><td>9/26/26</td><td>Indian Ridge</td><td>Blue</td><td>99</td><td>30.7</td><td>27.2</td><td>—</td><td>—</td><td>101</td><td>32.8</td><td>24.2</td><td>—</td><td>—</td></tr>
+<tr><td>9/27/26</td><td>Indian Ridge</td><td>Blue</td><td>95</td><td>26.6</td><td>27.1</td><td>—</td><td>—</td><td>95</td><td>26.6</td><td>24.0</td><td>—</td><td>—</td></tr>
+<tr><td>10/3/26</td><td>Indian Ridge</td><td>Blue</td><td>97</td><td>28.7</td><td>27.3</td><td>—</td><td>—</td><td>98</td><td>28.7*</td><td>24.5</td><td>—</td><td>—</td></tr>
+<tr><td>10/10/26</td><td>Indian Ridge</td><td>Blue</td><td>99</td><td>30.7</td><td>27.8</td><td>32</td><td>3/14</td><td>103</td><td>31.8*</td><td>25.0</td><td>35</td><td>4/14</td></tr></tbody>
 </table>
 </div>
 <div class="note">
-Indian Ridge rounds are from the Blue tees. Partial rounds use estimated WHS expected-score treatment for unplayed holes. Some older course differentials remain estimates where exact rating/slope or hole-by-hole adjustment data was unavailable.
+Indian Ridge rounds are from the Blue tees. Partial rounds use estimated WHS expected-score treatment for unplayed holes.
+An asterisk (*) means the handicap differential uses a Net Double Bogey-adjusted gross score rather than the raw score.
+On 10/10, Danblob recorded 32 putts and 3 of 14 fairways; Tuna recorded 35 putts and 4 of 14 fairways.
+Tuna's 10/10 raw 103 is estimated as 100 for handicap purposes because holes 14 and 16 exceed his Net Double Bogey maximum.
+Some older differentials remain estimates where exact rating/slope or hole-by-hole adjustment data was unavailable.
 </div>
 </div>
 </div>
